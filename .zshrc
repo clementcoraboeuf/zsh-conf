@@ -16,38 +16,38 @@ setopt globcomplete
 
 zstyle ':completion:*:descriptions' format
 
-### zinit
-_zinit_script="${ZINIT[BIN_DIR]}/zinit.zsh"
-[[ ! -f "$_zinit_script" ]] && {
+### zi
+_zi_script="${ZI[BIN_DIR]}/zi.zsh"
+[[ ! -f "$_zi_script" ]] && {
   if (( $+commands[git] )); then
     (
       cd "$ZDOTDIR"
       git submodule update --init --recursive
     )
   else
-    echo 'fatal: unable to install zinit: git not found' >&2
+    echo 'fatal: unable to install zi: git not found' >&2
     read -rk1
     exit 1
   fi
 }
 
-[[ ! -f "$_zinit_script" ]] && {
-  echo 'fatal: zinit not found' >&2
+[[ ! -f "$_zi_script" ]] && {
+  echo 'fatal: zi not found' >&2
   exit 1
 }
 
-source "$_zinit_script"
+source "$_zi_script"
 
-_zinit_modules="${ZINIT[BIN_DIR]}/zmodules/Src"
-[[ -e "$_zinit_modules" ]] && {
-  module_path+=("$_zinit_modules")
-  [[ -e "$_zinit_modules/zdharma/zplugin.so" ]] || {
-    zinit module build
+_zi_modules="${ZI[BIN_DIR]}/zmodules/Src"
+[[ -e "$_zi_modules" ]] && {
+  module_path+=("$_zi_modules")
+  [[ -e "$_zi_modules/zdharma/zplugin.so" ]] || {
+    zi module build
   }
   zmodload zdharma/zplugin
 }
 
-# zinit light "b0o/last-working-dir-wm"
+# zi light "b0o/last-working-dir-wm"
 
 [[ ${ZSH_LIGHT_MODE:-0} -eq 1 ]] && return
 
@@ -56,23 +56,23 @@ _zinit_modules="${ZINIT[BIN_DIR]}/zmodules/Src"
 function _z_turbo() {
   [[ ${ZSH_NO_TURBO:-0} -eq 1 ]] && {
     [[ $# -gt 1 ]] && {
-      zinit ice lucid "${@:2}"
+      zi ice lucid "${@:2}"
     }
     return
   }
-  zinit ice wait"$1" lucid "${@:2}"
+  zi ice wait"$1" lucid "${@:2}"
 }
 function _z_mturbo() {
-  zinit ice wait"$1" lucid "${@:2}"
+  zi ice wait"$1" lucid "${@:2}"
 }
 function _z_ice() {
-  zinit ice lucid "$@"
+  zi ice lucid "$@"
 }
 function _z_snip() {
-  zinit snippet "$@"
+  zi snippet "$@"
 }
 function _z() {
-  zinit light "$@"
+  zi light "$@"
 }
 
 _z_ice atload'unset -f upgrade_oh_my_zsh'
@@ -166,7 +166,7 @@ _z "willghatch/zsh-hooks"
 
 # bash-my-aws - https://github.com/bash-my-aws/bash-my-aws
 _z_turbo 0b has'aws' pick'bin/bma' as'program' \
-  atclone'ln -s ${ZINIT[PLUGINS_DIR]}/bash-my-aws---bash-my-aws $HOME/.bash-my-aws' \
+  atclone'ln -s ${ZI[PLUGINS_DIR]}/bash-my-aws---bash-my-aws $HOME/.bash-my-aws' \
   atload'alias a=bma'
 _z "bash-my-aws/bash-my-aws"
 
@@ -775,10 +775,10 @@ _gulp="$XDG_CONFIG_HOME/yarn/global/node_modules/gulp-cli/completion/zsh"
 
 # initialize command completions and zsh modules
 [[ $ZSHRC_INIT -eq 0 ]] && {
-  autoload -Uz _zinit
+  autoload -Uz _zi
   autoload -Uz +X compinit && compinit
   autoload -Uz +X bashcompinit && bashcompinit
   ZSHRC_INIT=1
 }
 
-zinit cdreplay -q
+zi cdreplay -q

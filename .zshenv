@@ -52,12 +52,12 @@ export ZSH_USER_FUNCTIONS_DIR="${${ZDOTDIR:+$ZDOTDIR/}:-$HOME/.zsh_}functions"
 [[ -d "$ZSH_USER_FUNCTIONS_DIR" ]] && fpath+=("$ZSH_USER_FUNCTIONS_DIR")
 
 ### zsh plugins
-## zinit
-declare -A ZINIT
-export ZINIT[HOME_DIR]="${ZDOTDIR}/zinit"
-export ZINIT[PLUGINS_DIR]="${ZINIT[HOME_DIR]}/plugins"
-export ZINIT[BIN_DIR]="${ZINIT[HOME_DIR]}/zinit"
-export ZINIT[MUTE_WARNINGS]=1
+## zi
+declare -A ZI
+export ZI[HOME_DIR]="${ZDOTDIR}/zi"
+export ZI[PLUGINS_DIR]="${ZI[HOME_DIR]}/plugins"
+export ZI[BIN_DIR]="${ZI[HOME_DIR]}/zi"
+export ZI[MUTE_WARNINGS]=1
 
 # Display red dots while waiting for tab completion
 export COMPLETION_WAITING_DOTS="true"
