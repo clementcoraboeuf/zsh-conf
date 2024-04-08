@@ -440,7 +440,6 @@ alias xqr="xcqr"
 alias xq="xcqr"
 
 # documentation & help
-alias man="viman"
 alias m="man"
 alias m0="man 0"
 alias m1="man 1"
