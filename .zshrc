@@ -696,8 +696,8 @@ _ocaml_opam_compl="$HOME/.opam/opam-init/init.zsh"
 # }
 
 ## asdf (version manager for node, go, etc)
-_asdf_sh="$ASDF_DATA_DIR/asdf.sh"
-_asdf_compl="$ASDF_DATA_DIR/completions/asdf.bash"
+_asdf_sh="$HOME/.asdf/asdf.sh"
+_asdf_compl="$HOME/.asdf/completions/asdf.bash"
 [[ -f "$_asdf_sh" ]] && {
   source "$_asdf_sh"
 }
