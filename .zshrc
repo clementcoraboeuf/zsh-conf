@@ -170,10 +170,6 @@ _z_turbo 0b has'aws' pick'bin/bma' as'program' \
   atload'alias a=bma'
 _z "bash-my-aws/bash-my-aws"
 
-# ui
-_z "b0o/suto-prompt"
-_z_snip "$ZDOTDIR/theme.zsh"
-
 # "smart" keybindings
 _z_turbo 0b
 _z_snip "$ZDOTDIR/smart-sudo.zsh"
