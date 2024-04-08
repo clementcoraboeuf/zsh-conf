@@ -214,15 +214,6 @@ function _atload_timer() {
 _z_mturbo 0b atload'_atload_timer'
 _z_snip "$ZDOTDIR/timer.zsh"
 
-# comark
-function _atload_comark() {
-  bindkey '^[,'       comark-fzf-smart
-  bindkey '^[<'       comark-fzf-cd
-  bindkey '^[[21;5~'  comark-fzf-insert
-}
-_z_turbo 0b atload'_atload_comark'
-_z "b0o/comark"
-
 function _atload_comp() {
   #  completion aliases
   compdef pip3=pip pip3.8=pip

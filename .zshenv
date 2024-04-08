@@ -67,14 +67,6 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#777"
 export ZSH_AUTOSUGGEST_STRATEGY=("history" "completion")
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 
-## comark
-export COMARK_DIR="$HOME/,"
-export COMARK_ALIAS=1
-export COMARK_GLOBAL_ALIAS=1
-export COMARK_PREFIX=","
-export COMARK_ALIAS_PREFIX=","
-export COMARK_GLOBAL_ALIAS_PREFIX=",,"
-
 ## last-working-dir
 # export LWD_AUTO_CD=1
 # export LWD_DEFAULT_DIR="$HOME"
