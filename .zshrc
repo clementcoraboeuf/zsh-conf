@@ -360,7 +360,7 @@ alias ssh="TERM=xterm ssh"
 
 #### ALIASES
 
-alias mancheat='() { curl -s "https://cheat.sh/$@" }'
+alias mancheat='() { curl -s "https://cheat.sh/$1" }'
 # <3
 alias ❤="echo '❤ ❤ ❤ I love you, $USER! ❤ ❤ ❤'"
 
