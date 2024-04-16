@@ -359,6 +359,8 @@ alias ggig="gig -w"
 alias ssh="TERM=xterm ssh"
 
 #### ALIASES
+
+alias mancheat='() { curl -s "https://cheat.sh/$@" }'
 # <3
 alias ❤="echo '❤ ❤ ❤ I love you, $USER! ❤ ❤ ❤'"
 
