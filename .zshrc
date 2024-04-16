@@ -9,6 +9,7 @@ setopt multios
 setopt pushd_ignore_dups
 setopt auto_pushd
 setopt pushdminus
+setopt print_exit_value
 
 # Enable globs in autocompletion searches, e.g.
 # typing `grep --i*m<TAB>` will autocomplete `grep --invert-match`
